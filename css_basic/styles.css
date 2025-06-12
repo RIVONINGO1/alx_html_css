@@ -1,59 +1,108 @@
-body {
-  background-color: #fff0f5; /* light pink background */
-  color: #4a0033; /* deep rose text color */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Reset some default margins and paddings */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  background-color: #ff69b4; /* hot pink */
-  color: white;
-  padding: 20px;
-  font-size: 1.5rem;
+body {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
 }
 
-.logo {
-  font-size: 2rem;
-  margin-right: 15px;
+header, footer {
+  background-color: #005f73;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 main {
-  background-color: #ffe6f0; /* very soft pink */
-  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  padding: 15px;
   gap: 20px;
+  background-color: #e0fbfc;
 }
 
 article {
-  background-color: #fff;
+  flex: 2;
+  background-color: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(255, 105, 180, 0.3); /* pink shadow */
   overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  line-height: 1.6;
+}
+
+article h2 {
+  margin-bottom: 15px;
+  color: #0a9396;
 }
 
 aside {
-  background-color: #ffd1dc; /* baby pink */
+  flex: 1;
+  background-color: white;
   padding: 20px;
   border-radius: 8px;
   overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  line-height: 1.5;
+}
+
+aside h3 {
+  margin-bottom: 15px;
+  color: #ee6c4d;
+}
+
+aside img {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+aside a {
+  color: #0077b6;
+  text-decoration: none;
+}
+
+aside a:hover {
+  text-decoration: underline;
 }
 
 footer {
-  background-color: #ff69b4;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 20px;
+  font-size: 1rem;
 }
 
-h2, h3 {
-  color: #c71585; /* medium violet red */
+/* Scrollbar styling (optional, modern browsers) */
+article::-webkit-scrollbar, aside::-webkit-scrollbar {
+  width: 8px;
 }
 
-ul {
-  list-style: circle;
-  padding-left: 20px;
+article::-webkit-scrollbar-thumb, aside::-webkit-scrollbar-thumb {
+  background-color: #94d2bd;
+  border-radius: 4px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  article, aside {
+    flex: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
